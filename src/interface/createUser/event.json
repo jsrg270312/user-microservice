@@ -1,0 +1,56 @@
+{
+  "body": null,
+  "headers": {
+    "Host": "localhost:3000",
+    "User-Agent": "insomnia/11.2.0",
+    "Accept": "*/*",
+    "Content-Length": "0"
+  },
+  "httpMethod": "POST",
+  "isBase64Encoded": false,
+  "multiValueHeaders": {
+    "Host": [ "localhost:3000" ],
+    "User-Agent": [ "insomnia/11.2.0" ],
+    "Accept": [ "*/*" ],
+    "Content-Length": [ "0" ]
+  },
+  "multiValueQueryStringParameters": null,
+  "path": "/users",
+  "pathParameters": null,
+  "queryStringParameters": null,
+  "requestContext": {
+    "accountId": "offlineContext_accountId",
+    "apiId": "offlineContext_apiId",
+    "domainName": "offlineContext_domainName",
+    "domainPrefix": "offlineContext_domainPrefix",
+    "extendedRequestId": "059ac787-2f5e-4eee-a8eb-177730c1a0af",
+    "httpMethod": "POST",
+    "identity": {
+      "accessKey": null,
+      "accountId": "offlineContext_accountId",
+      "apiKey": "offlineContext_apiKey",
+      "apiKeyId": "offlineContext_apiKeyId",
+      "caller": "offlineContext_caller",
+      "cognitoAuthenticationProvider": "offlineContext_cognitoAuthenticationProvider",
+      "cognitoAuthenticationType": "offlineContext_cognitoAuthenticationType",
+      "cognitoIdentityId": "offlineContext_cognitoIdentityId",
+      "cognitoIdentityPoolId": "offlineContext_cognitoIdentityPoolId",
+      "principalOrgId": null,
+      "sourceIp": "::1",
+      "user": "offlineContext_user",
+      "userAgent": "insomnia/11.2.0",
+      "userArn": "offlineContext_userArn"
+    },
+    "operationName": null,
+    "path": "/users",
+    "protocol": "HTTP/1.1",
+    "requestId": "455df900-b83f-48b9-b628-68b562a80e2b",
+    "requestTime": "24/Sep/2025:02:07:45 -0600",
+    "requestTimeEpoch": 1758701265692,
+    "resourceId": "offlineContext_resourceId",
+    "resourcePath": "/dev/users",
+    "stage": "dev"
+  },
+  "resource": "/users",
+  "stageVariables": null
+}

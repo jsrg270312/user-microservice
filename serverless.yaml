@@ -1,0 +1,51 @@
+service: user-api
+frameworkVersion: "3"
+useDotenv: true
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-1
+  memorySize: 128
+  timeout: 3
+  environment:
+    NODE_ENV: ${env:NODE_ENV}
+    PG_DATABASE: ${env:PG_DATABASE}
+    PG_USER: ${env:PG_USER}
+    PG_PASSWORD: ${env:PG_PASSWORD}
+    PG_HOST: ${env:PG_HOST}
+    PG_PORT: ${env:PG_PORT}
+  iam:
+    role: arn:aws:iam::600190974035:role/lambda-execution
+
+functions:
+  createUser:
+    handler: src/interface/createUser/handler.handler
+    events:
+      - httpApi:
+          method: POST
+          path: /users
+
+plugins:
+  - serverless-esbuild
+  - serverless-offline
+
+custom:
+  esbuild:
+    bundle: true          # empaqueta todo en un solo archivo por función
+    minify: true        # en dev mejor en false; en prod puedes poner true
+    sourcemap: true       # útil para debug It tells you where is the error in ts files
+    target: "node20"      # It generates js code compoatible with node20
+    platform: "node"  #The code will run in a lambda, backedn, 
+    external:             # estas ya existen en el runtime de Lambda
+      - "@aws-sdk/*"
+      - "@sequelize/mariadb"
+      - "@sequelize/mssql"
+      - "@sequelize/mysql"
+      - "@sequelize/sqlite3"
+      - "@sequelize/db2-ibmi"
+      - "@sequelize/db2"
+      - "@sequelize/snowflake"
+
+  serverless-offline:
+    host: 0.0.0.0
+    httpPort: 3000

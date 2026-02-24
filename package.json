@@ -1,0 +1,31 @@
+{
+  "name": "path-sls-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Sebastian Reye",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --exec npm run sls:offline",
+    "dev:reload": "nodemon --exec npm run sls:offline:reload",
+    "sls:offline": "serverless offline start",
+    "sls:offline:reload": "serverless offline start --reloadHandler",
+    "validate": "sls print --stage dev",
+    "build": "sls package --stage dev"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.152",
+    "esbuild": "^0.27.1",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.6.2",
+    "serverless": "^3",
+    "serverless-esbuild": "^1.56.1",
+    "serverless-offline": "^13",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@sequelize/core": "^7.0.0-alpha.46",
+    "@sequelize/postgres": "^7.0.0-alpha.46",
+    "pg": "^8.16.3",
+    "pg-hstore": "^2.3.4"
+  }
+}
