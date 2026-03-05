@@ -1,20 +1,22 @@
-import { UserEntity, UserStatus } from '../domain';
-import { IUserRepository } from '../domain/IUserRepository';
-import { ICreateUserUseCaseBoundary } from './userUseCasesBoundaries';
-import { CreateUserInputDto, CreateUserOutputDto } from './dtos/createUserDTO';
-import { EmailAlreadyExists } from './errors';
+import { UserEntity, UserStatus, IUserRepository } from '../domain';
+import {
+    ICreateUserUseCaseBoundary,
+    CreateUserInputDto,
+    CreateUserOutputDto,
+    EmailAlreadyExists,
+} from './';
 export class CreateUserUseCase implements ICreateUserUseCaseBoundary {
     constructor(private readonly userRepository: IUserRepository) {}
 
     public async execute(
-        userData: CreateUserInputDto,
+        userInformation: CreateUserInputDto,
     ): Promise<CreateUserOutputDto> {
         let emailExist = await this.userRepository.isEmailAlreadySaved(
-            userData.email,
+            userInformation.email,
         );
         if (emailExist) throw new EmailAlreadyExists();
         const userToSave: UserEntity = {
-            ...userData,
+            ...userInformation,
         };
         const userSaved = await this.userRepository.createUser(userToSave);
         return {

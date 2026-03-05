@@ -1,8 +1,8 @@
 {
-  "name": "path-sls-typescript",
+  "name": "user-microservice",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Sebastian Reye",
+  "author": "Sebastian Reyes",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec npm run sls:offline",

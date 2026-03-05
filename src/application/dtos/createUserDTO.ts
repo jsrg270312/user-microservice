@@ -1,16 +1,16 @@
 import { UserStatus } from '../../domain';
 
-export interface CreateUserInputDto {
+export type CreateUserInputDto = {
     firstName: string;
     email: string;
     lastName?: string;
     age?: number;
-}
-export interface CreateUserOutputDto {
+};
+export type CreateUserOutputDto = {
     id: number;
     firstName: string;
-    lastName?: string;
-    age?: number;
     status: UserStatus;
     email: string;
-}
+    lastName?: string;
+    age?: number;
+};

@@ -1,4 +1,4 @@
-service: user-api
+service: user-microservice
 frameworkVersion: "3"
 useDotenv: true
 provider:
@@ -31,12 +31,12 @@ plugins:
 
 custom:
   esbuild:
-    bundle: true          # empaqueta todo en un solo archivo por función
-    minify: true        # en dev mejor en false; en prod puedes poner true
-    sourcemap: true       # útil para debug It tells you where is the error in ts files
-    target: "node20"      # It generates js code compoatible with node20
-    platform: "node"  #The code will run in a lambda, backedn, 
-    external:             # estas ya existen en el runtime de Lambda
+    bundle: true      # empaqueta todo en un solo archivo por función
+    minify: true      # en dev mejor en false; en prod puedes poner true
+    sourcemap: true   # útil para debug It tells you where is the error in ts files
+    target: "node20"  # It generates js code compatible with node20
+    platform: "node"
+    external:
       - "@aws-sdk/*"
       - "@sequelize/mariadb"
       - "@sequelize/mssql"
@@ -48,4 +48,4 @@ custom:
 
   serverless-offline:
     host: 0.0.0.0
-    httpPort: 3000
+    httpPort: 3000 #listen on port 3000
