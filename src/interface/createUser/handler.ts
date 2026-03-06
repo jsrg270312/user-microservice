@@ -16,7 +16,7 @@ export const handler: APIGatewayProxyHandler = async (
         //console.time('databaseConnection');
         await startDataBaseConnection();
         //console.timeEnd('databaseConnection');
-        //console.log(JSON.stringify(event, null, 2), 'Event recived');
+        console.log(JSON.stringify(event, null, 2), 'Create User');
         const { firstName, lastName, email, age } = JSON.parse(
             event.body as string,
         );

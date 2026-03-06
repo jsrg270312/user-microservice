@@ -34,7 +34,7 @@ custom:
     bundle: true      # empaqueta todo en un solo archivo por función
     minify: true      # en dev mejor en false; en prod puedes poner true
     sourcemap: true   # útil para debug It tells you where is the error in ts files
-    target: "node20"  # It generates js code compatible with node20
+    target: "node18"  # It generates js code compatible with node20
     platform: "node"
     external:
       - "@aws-sdk/*"

@@ -1,3 +1,4 @@
 **.env
 /.esbuild
 /node_modules
+.serverless
